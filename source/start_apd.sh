@@ -36,7 +36,7 @@ ip -6 addr add dev wlan1 $IP_ADDR_6
 mkdir /tmp/start_apd
 cp /etc/start_apd/2_4g.conf /tmp/start_apd
 cp /etc/start_apd/5g.conf /tmp/start_apd
-bash -c "cd /tmp/start_apd && /usr/local/libexec/start_apd/generate_conf $WIRELESS_CARD > hostapd.conf"
+bash -c "cd /tmp/start_apd && /usr/libexec/start_apd/generate_conf $WIRELESS_CARD > hostapd.conf"
 cp /tmp/start_apd/hostapd.conf /etc/hostapd/hostapd.conf
 hostapd /etc/hostapd/hostapd.conf &
 HOSTAPD_PID=$!
